@@ -1,0 +1,526 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.intro-menu{
+    height: 100vh;
+    width: 100vw;
+    background-color:white;
+    display: flex;
+    position: absolute;
+    z-index: 100;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-menu h1{
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 3rem;
+}
+
+.intro-menu h2{
+    text-align: center;
+    padding-bottom: 130px;
+    font-size: 2rem;
+}
+
+.wrapper{
+    height: 50%;
+    width: 25%;
+    box-shadow: 5px 5px 5px rgb(177, 177, 177);
+    border: 1px solid rgb(240, 240, 240);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper>input{
+    margin-bottom: 250px;
+    border: none;
+    border-bottom: grey 1px solid;
+    text-align: center;
+    width: 50%;
+    padding-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.wrapper>button{
+    width: 40%;
+    font-size: 1.2rem;
+    padding: 10px;
+    margin: 5px;
+    background-color: white;
+    box-shadow: 5px 5px 5px rgb(177, 177, 177);
+    border: 1px solid rgb(240, 240, 240);
+    cursor: pointer;
+}
+
+.wrapper>button:hover{
+transform: scale(1.1);
+}
+
+.dead-block{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(94, 94, 94, 0.842);
+    display: none;
+    position: absolute;
+    z-index: 100;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dead-block h1{
+    color: white;
+    font-size: 10rem;
+    transform: translateY(-50%);
+}
+
+.dead-block p{
+    color: white;
+    font-size: 5rem;
+    transform: translateY(-50%);
+}
+
+.game-board{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.left-part, .right-part{
+    width: 20%;
+    background: rgb(236, 235, 235);
+    padding: 40px 30px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left-part{
+    padding-left: 60px;
+}
+
+
+.inventory{
+    width: 100%;
+    height: 90%;
+}
+
+.inventory-header{
+    text-align: center;
+    margin-bottom: 10px ;
+}
+
+.inventory-ul{
+    height: 95%;
+    width: 100%;
+    border: 1px solid rgb(143, 143, 143);
+    box-shadow: -10px 10px 30px rgb(190, 190, 190);
+}
+
+.save{
+    background: rgb(236, 235, 235);
+    padding: 15px;
+    font-size: 1.2rem;
+    border: 1px solid rgb(143, 143, 143);
+    box-shadow: -10px 10px 15px rgb(190, 190, 190);
+    cursor: pointer;
+}
+
+.save:hover{
+    box-shadow: -10px 10px 15px rgb(172, 172, 172);
+}
+
+.save:active{
+    transform: scale(0.98);
+    box-shadow: -5px 5px 10px rgb(172, 172, 172);
+}
+
+.right-part{
+    padding-right: 60px;
+}
+
+.character{
+    height: 25%;
+}
+
+.char-header{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.char-info{
+    border: 1px rgb(143, 143, 143) solid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3fr 2fr;
+    grid-template-areas: 
+    "basics stats"
+    "vitals vitals";
+    box-shadow: 10px 10px 30px rgb(190, 190, 190);
+}
+
+.char-basics{
+    grid-area: basics;
+}
+
+.char-stats{
+    grid-area: stats;
+}
+
+.char-stats>p{
+    display: flex;
+    align-content: center;
+    position: relative;
+}
+
+.stat{
+    margin-left: 5px;
+}
+
+.level{
+    margin-left: 5px;
+}
+
+.pridaj{
+    width: 15%;
+    height: 70%;
+    justify-self: right;
+    position: absolute;
+    right: 0;
+    background-color: gray;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px rgb(172, 172, 172);
+    text-align: center;
+    color: white;
+    display: none;
+}
+
+.pridaj:active{
+    transform: scale(0.95);
+    box-shadow: 1px 1px 1px rgb(172, 172, 172);
+}
+
+.char-basics, .char-stats{
+    padding: 10px 10px 5px 10px;
+}
+
+.char-basics>p, .char-stats>p{
+    height: 20%;
+    font-size: 1.1rem;
+}
+
+.vitals{
+    padding-bottom: 10px;
+    grid-area: vitals;
+}
+
+.hp{
+    padding:0 10px 4px 10px;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.resources{
+    padding:4px 10px 0 10px;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.desc-hp, .desc-res{
+    height: 30%;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.full-hp, .full-resources{
+    border: 2px solid rgb(31, 204, 83);
+    height: 60%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    font-size: 1.2rem;
+}
+
+.full-hp{
+    background-color: rgb(168, 219, 184);
+}
+
+.actual-hp, .actual-resources{
+    height: 100%;
+    width: 70%;
+    position: absolute;
+    background-color: rgb(31, 204, 83);
+    left: 0;
+    z-index: -5;
+}
+
+.full-resources{
+    background-color: rgb(182, 131, 131);
+    border: 2px solid rgb(180, 18, 18);
+}
+
+.actual-resources{
+    background-color: rgb(180, 18, 18);
+}
+
+.abilities-header{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.abilities{
+    height: 70%;
+}
+
+.abilities-ul{
+    border: 1px solid rgb(143, 143, 143);
+    height: 95%;
+    box-shadow: 10px 10px 30px rgb(190, 190, 190);
+}
+
+.abilities-ul li{
+    list-style: none;
+    background-color: rgb(224, 224, 224);
+    height: 7%;
+    border-bottom: 1px solid rgb(143, 143, 143);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas: 
+    "ability ability"
+    "dmg mana";
+    color: rgb(71, 71, 71);
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.abilities-ul li:hover{
+    transform: scale(1.05);
+    background-color: rgb(214, 214, 214);
+    border: rgb(0, 0, 0) 1px solid;
+}
+
+.abilities-ul li:active{
+    transform: scale(1.01);
+}
+
+.ability-name{
+    grid-area: ability;
+    padding-top: 2px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+
+}
+
+.ability-desc{
+    grid-area: dmg;
+}
+
+.res-cost{
+    grid-area: mana;
+}
+
+.mid-part{
+    width: 60%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-field{
+    margin-top: 78px;
+    height: 45%;
+    width: 90%;
+    border: 1px solid rgb(245, 245, 245);
+    box-shadow: 10px 10px 30px rgb(190, 190, 190);
+    padding: 30px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.text-field>p{
+    margin: 5px 15px;
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+
+.player-input{
+    width: 40%;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    border: none;
+    border-bottom: gray solid 2px;
+    text-align: center;
+}
+
+.prikazy{
+    width: 90%;
+    height: 30%;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.prikazy header{
+    text-align: center;
+    border-bottom: 1px solid rgb(211, 211, 211);
+    width: 80%;
+    padding-bottom: 15px ;
+}
+
+.content{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.content>div{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.inventory-ul li{
+    list-style: none;
+    background-color: rgb(224, 224, 224);
+    height: 6%;
+    border-bottom: 1px solid rgb(143, 143, 143);
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas: 
+    "nazov tlacitka"
+    "popis tlacitka";
+    color: rgb(71, 71, 71);
+    cursor: default;
+}
+
+.nazov-itemu{
+    grid-area: nazov;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    padding-top: 10px;
+}
+
+.popis-itemu{
+    grid-area: popis;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding-bottom: 8px;
+}
+
+.popis-itemu>div{
+    margin: 0 15px;
+}
+
+#equipped{
+    /*border: 2px solid green;*/
+    background-color: rgb(204, 204, 204);
+    color: black;
+    font-size: 1.3em;
+    font-style: italic;
+}
+
+.item-tlacitka{
+    grid-area: tlacitka;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.fa-check{
+    color: rgb(37, 173, 55);
+    cursor: pointer;
+}
+
+.fa-check:hover{
+    color: rgb(43, 199, 63);
+    transform: scale(1.2);
+}
+
+.fa-ban{
+    color: rgb(156, 20, 20);
+    cursor: pointer;
+}
+
+.fa-ban:hover{
+    color: rgb(207, 27, 27);
+    transform: scale(1.1);
+}
+
+.inventory-ul li:hover{
+    transform: scale(1.05);
+    background-color: rgb(214, 214, 214);
+    border: rgb(0, 0, 0) 1px solid;
+}
+
+.money{
+    position: relative;
+    bottom: 51px;
+    height: 50px;
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.zlataky, .strieborne, .medene{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.zl-ikona, .st-ikona, .md-ikona{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 1px solid rgb(230, 196, 3);
+    background-color: rgb(230, 196, 3);
+    box-shadow: 3px 3px 3px rgb(168, 168, 168);
+}
+
+.st-ikona{
+    border: 1px solid rgb(194, 194, 194);
+    background-color: rgb(194, 194, 194);
+}
+
+.md-ikona{
+    border: 1px solid rgb(241, 117, 14);
+    background-color: rgb(241, 117, 14);
+}

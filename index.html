@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c01160d7ea.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="intro-menu">
+        <h1>Textová RPG hra</h1>
+        <h2>Vytvor svoju postavu</h2>
+        <div class="wrapper">
+            <input class="name-input" type="text" placeholder="Zadaj meno postavy">
+            <button id="warrior" class="class-btn">Bojovník</button>
+            <button id="paladin" class="class-btn">Paladín</button>
+            <button id="mage" class="class-btn">Mág</button>
+        </div>
+    </div>
+    <div class="dead-block">
+        <h1>ZOMREL SI</h1>
+        <p>Ak chceš hrať znovu, refreshni stránku</p>
+    </div>
+    <div class="game-board">
+        <div class="left-part">
+            <div class="inventory">
+                <div class="inventory-header"><h2>INVENTÁR</h2></div>
+                <ul class="inventory-ul">
+                </ul>
+                <div class="money">
+                    <div class="zlataky">
+                        <p class="zl-mnozstvo">0</p>
+                        <div class="zl-ikona"></div>
+                    </div>
+                    <div class="strieborne">
+                        <p class="st-mnozstvo">0</p>
+                        <div class="st-ikona"></div>
+                    </div>
+                    <div class="medene">
+                        <p class="md-mnozstvo">0</p>
+                        <div class="md-ikona"></div>
+                    </div>
+                </div>
+            </div>
+            <button class="save">Ulož hru</button>
+        </div>
+        <div class="mid-part">
+            <div class="text-field">
+            </div>
+            <input type="text" class="player-input" placeholder="Zadavaj svoje prikazy">
+            <div class="prikazy">
+                <header><h2>PREHLAD HERNÝCH PRÍKAZOV</h2></header>
+                <div class="content">
+                    <div class="row-left">
+                        <p>chod dopredu</p>
+                        <p>chod naspat</p>
+                        <p>chod dolava</p>
+                        <p>chod doprava</p>
+                    </div>
+                    <div class="row-right">
+                        <p>preskumaj</p>
+                        <p>vezmi nazov predmetu</p>
+                        <p>zacni rozhovor</p>
+                        <p>relaxuj</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-part">
+            <div class="character">
+                <div class="char-header"><h2>POSTAVA</h2></div>
+                <div class="char-info">
+                    <div class="char-basics">
+                        <p>Meno: <span class="name"></span></p>
+                        <p>Povolanie: <span class="class"></span></p>
+                        <p>Útok: <span class="att">0</span></p>
+                        <p>Obrana: <span class="def">0</span></p>
+                        <p>Skúsenosti: <span class="xp">0</span></p>
+                    </div>
+                    <div class="char-stats">
+                        <p>Sila: <span class="stat str">0</span><span class="pridaj" id="str"></span></p>
+                        <p>Obratnosť: <span class="stat dex">0</span><span class="pridaj" id="dex"></span></p>
+                        <p>Odolnosť: <span class="stat con">0</span><span class="pridaj" id="con"></span></p>
+                        <p>Inteligencia: <span class="stat int">0</span><span class="pridaj" id="int"></span></p>
+                        <p>Úroveň: <span class="level">0</span></p>
+                    </div>
+                    <div class="vitals">
+                        <div class="hp">
+                            <div class="desc-hp">Život</div>
+                            <div class="full-hp">
+                                <span class="current-hp">80</span>/<span class="max-hp">80</span> 
+                                <div class="actual-hp"></div>
+                            </div>
+                        </div>
+                        <div class="resources">
+                            <div class="desc-res">Zúrivosť</div>
+                            <div class="full-resources">
+                                <span class="current-res">80</span>/<span class="max-res">80</span> 
+                                <div class="actual-resources"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="abilities">
+                <div class="abilities-header"><h2>SCHOPNOSTI</h2></div>
+                <ul class="abilities-ul">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
